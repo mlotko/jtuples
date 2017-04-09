@@ -7,10 +7,10 @@ import java.util.Collection;
 import java.util.Iterator;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class FactoryMethods {
+public final class Factories {
     private static final UnitValue SHARED_UNIT = new UnitValue();
 
-    public static Tuple tupleFrom(Object[] values) {
+    public static Tuple tuplize(Object[] values) {
         switch (values.length) {
             case 0:
                 return tupleOfNothing();
@@ -26,11 +26,11 @@ public final class FactoryMethods {
                 return tupleOf(values[0], values[1], values[2], values[3], values[4]);
             default:
                 throw new IllegalArgumentException(String.format(
-                        "Cannot represent array tupleFrom %s elements with tuples.", values.length));
+                        "Cannot represent array tuplize %s elements with tuples.", values.length));
         }
     }
 
-    public static Tuple tupleFrom(Collection<?> collection) {
+    public static Tuple tuplize(Collection<?> collection) {
         int size = collection.size();
         if (size <= 5) {
             Iterator<?> iterator = collection.iterator();
@@ -50,7 +50,7 @@ public final class FactoryMethods {
             }
         }
         throw new IllegalArgumentException(String.format(
-                "Cannot represent collection tupleFrom %s elements with tuples.", size));
+                "Cannot represent collection tuplize %s elements with tuples.", size));
     }
 
     public static Tuple tupleOfNothing() {
