@@ -2,9 +2,9 @@ package pl.lotko.type.tuple
 
 import spock.lang.Specification
 
-import static pl.lotko.type.tuple.TupleFactory.of;
+import static pl.lotko.type.tuple.FactoryMethods.of;
 
-class TupleFactoryTest extends Specification {
+class FactoryMethodsTest extends Specification {
     def "two arguments create a Pair"() {
         when:
         def pair = of("String", 123)

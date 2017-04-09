@@ -1,15 +1,19 @@
 package pl.lotko.type.tuple;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.util.Collection;
 import java.util.Iterator;
 
-class TupleFactory {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class FactoryMethods {
     private static final UnitValue SHARED_UNIT = new UnitValue();
 
-    public static Tuple of(Object[] values) {
+    public static Tuple from(Object[] values) {
         switch (values.length) {
             case 0:
-                return of();
+                return ofNothing();
             case 1:
                 return of(values[0]);
             case 2:
@@ -22,17 +26,17 @@ class TupleFactory {
                 return of(values[0], values[1], values[2], values[3], values[4]);
             default:
                 throw new IllegalArgumentException(String.format(
-                        "Cannot represent array of %s elements with tuples.", values.length));
+                        "Cannot represent array from %s elements with tuples.", values.length));
         }
     }
 
-    public static Tuple of(Collection<?> collection) {
+    public static Tuple from(Collection<?> collection) {
         int size = collection.size();
         if (size <= 5) {
             Iterator<?> iterator = collection.iterator();
             switch (size) {
                 case 0:
-                    return of();
+                    return ofNothing();
                 case 1:
                     return of(iterator.next());
                 case 2:
@@ -46,10 +50,10 @@ class TupleFactory {
             }
         }
         throw new IllegalArgumentException(String.format(
-                "Cannot represent collection of %s elements with tuples.", size));
+                "Cannot represent collection from %s elements with tuples.", size));
     }
 
-    public static Tuple of() {
+    public static Tuple ofNothing() {
         return SHARED_UNIT;
     }
 
