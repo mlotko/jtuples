@@ -1,11 +1,7 @@
 package pl.lotko.type.tuple;
 
-public interface Pair<A, B> extends Tuple {
-    static <A, B> Pair<A, B> of(A first, B second) {
-        return new PairValue<>(first, second);
-    }
+public interface Pair<A, B> extends Monuple<A> {
 
-    A getFirst();
     B getSecond();
 
 }

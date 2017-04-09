@@ -5,7 +5,7 @@ import spock.lang.Specification
 class TripleTest extends Specification {
     def "Of"() {
         when:
-        def triple = Triple.of("String", 123, 1.0)
+        def triple = TupleFactory.of("String", 123, 1.0)
 
         then:
         triple instanceof Triple

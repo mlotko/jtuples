@@ -5,7 +5,7 @@ import spock.lang.Specification
 class PairTest extends Specification {
     def "Of"() {
         when:
-        def pair = Pair.of("String", 123)
+        def pair = TupleFactory.of("String", 123)
 
         then:
         pair instanceof Pair
