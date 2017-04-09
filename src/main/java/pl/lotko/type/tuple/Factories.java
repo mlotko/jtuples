@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Factories {
-    private static final UnitValue SHARED_UNIT = new UnitValue();
+    private static final Unit SHARED_UNIT = new UnitValue();
 
     public static Tuple tuplize(Object[] values) {
         switch (values.length) {
@@ -53,7 +53,7 @@ public final class Factories {
                 "Cannot represent collection tuplize %s elements with tuples.", size));
     }
 
-    public static Tuple tupleOfNothing() {
+    public static Unit tupleOfNothing() {
         return SHARED_UNIT;
     }
 

@@ -1,6 +1,6 @@
 package pl.lotko.type.tuple;
 
-public final class UnitValue implements Tuple {
+public final class UnitValue implements Unit {
     private static final Object[] NO_VALUES = new Object[0];
 
     @Override
