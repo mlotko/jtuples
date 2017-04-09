@@ -2,12 +2,12 @@ package pl.lotko.type.tuple
 
 import spock.lang.Specification
 
-import static pl.lotko.type.tuple.FactoryMethods.of;
+import static pl.lotko.type.tuple.FactoryMethods.tupleOf
 
 class FactoryMethodsTest extends Specification {
     def "two arguments create a Pair"() {
         when:
-        def pair = of("String", 123)
+        def pair = tupleOf("String", 123)
 
         then:
         pair instanceof Pair
@@ -18,7 +18,7 @@ class FactoryMethodsTest extends Specification {
 
     def "three arguments create a Triple"() {
         when:
-        def triple = of("String", 123, 1.0)
+        def triple = tupleOf("String", 123, 1.0)
 
         then:
         triple instanceof Triple
