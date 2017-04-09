@@ -1,4 +1,4 @@
-package pl.lotko.types.tuples;
+package pl.lotko.type.tuple;
 
 public interface Pair<A, B> {
     A getFirst();
