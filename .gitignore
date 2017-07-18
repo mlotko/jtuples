@@ -1,4 +1,5 @@
 .idea
 target
-/.nb-gradle/.gradle
+.nb-gradle/
+.gradle/
 build
